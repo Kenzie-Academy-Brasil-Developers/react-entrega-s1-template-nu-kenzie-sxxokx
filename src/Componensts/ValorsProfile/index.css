@@ -1,0 +1,53 @@
+.container-profileValues{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 143px ;
+}
+.types-values-buttons{
+    display: flex;
+    gap: 1rem;
+}
+.types-values-buttons button{
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    align-items: center;
+    background-color: #E9ECEF;
+    color: #343A40;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.types-values-buttons button:hover{
+    background-color: #FD377E;
+    color: #FFFFFF;
+}
+.text-resume-financ{
+    font-size: 16px;
+    font-weight: 700;
+    color: #212529;
+}
+
+.info-not-have{
+    text-align: left;
+}
+ul{
+    list-style: none;
+}
+.container-ul{
+    height: 19rem;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: auto;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    align-items: center;
+    text-align: left;
+}
+::-webkit-scrollbar{
+    display: none;
+}

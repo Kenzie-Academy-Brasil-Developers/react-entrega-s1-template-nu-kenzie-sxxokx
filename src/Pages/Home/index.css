@@ -1,0 +1,44 @@
+.container-home{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    gap: 2rem;
+
+}
+.container-infos{
+    position: relative;
+    top: 4.25rem;
+    left: 8.5rem;
+    width: 30%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: left;
+    gap: 20px;
+  
+}
+.container-h2{
+    font-size: 2.375rem;
+    font-weight: 800;
+}
+.text-p{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.container-form{
+    width: 40%;
+
+}
+.button-Start{
+    width: 15.0625rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.8125rem, 1.25rem;
+    background-color: #FD377E;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
