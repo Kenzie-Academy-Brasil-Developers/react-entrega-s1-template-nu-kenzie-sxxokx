@@ -7,6 +7,27 @@
     justify-content: space-between;  
     margin-right: 70px;
 }
+.container-li-entrada{
+    width: 100%;
+    height: 89px;
+    border-radius: 8px;
+    background-color: #F8F9FA;
+    display: flex;
+    justify-content: space-between;  
+    margin-right: 70px;
+    border-left: 3px solid green;
+}
+.container-li-saida{
+    width: 100%;
+    height: 89px;
+    border-radius: 8px;
+    background-color: #F8F9FA;
+    display: flex;
+    justify-content: space-between;  
+    margin-right: 70px;
+    border-left: 3px solid red;
+}
+
 .position-div1-li{
     display: flex;
     flex-direction: column;

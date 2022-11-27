@@ -3,7 +3,7 @@ import "../ValorsProfile/index.css"
 import { ListValuesProfile } from "../listValues"
 
 
-export const ProfileValues = () => {
+export const ProfileValues = ({setFiltered, listFiltered, removeTransition}) => {
     return (
         <div className="container-profile-all">
             <div className="container-profileValues">
@@ -12,20 +12,25 @@ export const ProfileValues = () => {
             </div>
 
             <div className="types-values-buttons">
-                <button>Todos</button>
-                <button>Entradas</button>
-                <button>Despesas</button>
+                <button onClick={() => setFiltered('todos')}>Todos</button>
+                <button onClick={() => setFiltered('Entrada')}>Entradas</button>
+                <button onClick={() => setFiltered('Saída')}>Despesas</button>
             </div>
             </div>
-            <h2 className="info-not-have">Você ainda não possui nenhum lançamento</h2>
-                                
+            {
+                ListValuesProfile === '' ?
+                <h2 className="info-not-have">Você ainda não possui nenhum lançamento</h2>
+                :
             <ul className="container-ul">
-                <ListValuesProfile/>
-                <ListValuesProfile/>
-                <ListValuesProfile/>
-                <ListValuesProfile/>
-                <ListValuesProfile/>
+                 {
+              listFiltered.map((transition, i) => 
+              <ListValuesProfile key={i} transition={transition} removeTransition={removeTransition} />
+                )
+              }
+               
             </ul>
+            }
+                                
         </div>
     )
 }

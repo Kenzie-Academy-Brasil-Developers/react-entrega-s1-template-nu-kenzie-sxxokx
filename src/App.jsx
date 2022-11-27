@@ -1,16 +1,24 @@
 import './App.css';
 import { HomePage } from './Pages/Home';
 import { Dashborading } from './Pages/DashBorard';
+import {HeaderDash} from './Componensts/header'
 import {useState} from "react";
 
 function App() {
   const [start, setStart] = useState(true)
-  console.log(1)
-  console.log(start)
-
+  function Login (){
+    if(start === true){
+       setStart(false)
+    }
+  }
+  function Logout (){
+    if(start === false){
+       setStart(true)
+    }
+  }
   return (
     <div className="App">
-      {start ? (<Dashborading setStart={setStart}/>) : (<HomePage setStart={setStart}/>)}
+      {start ? (<HomePage setStart={setStart} Login={Login}/>) : (<Dashborading  setStart={setStart} Logout={Logout} />)}
     </div>
   );
 }

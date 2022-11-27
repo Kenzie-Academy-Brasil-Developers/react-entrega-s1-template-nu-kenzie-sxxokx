@@ -4,22 +4,43 @@ import { InputsForm } from "../../Componensts/Inputs";
 import {ProfileValues} from "../../Componensts/ValorsProfile"
 import { HeaderDash } from "../../Componensts/header";
 import { ValueTotal } from "../../Componensts/TotalValue";
+import { useState } from "react";
 
-export const Dashborading = () => {
+export const Dashborading = ({Logout}) => {
+
+    
+    const [listTransactions, setListTransactions] = useState([
+        { description: 'Salário recebido', type: 'Entrada', value: 2500 },
+        { description: 'Conta de luz', type: 'Saída', value: -150 }
+    ])
+    const [filtered, setFiltered] = useState('todos')
+    
+    const listFiltered = listTransactions.filter(
+        transition => 
+        filtered === 'todos' ?
+        true :
+        transition.type === filtered
+        )
+    const removeTransition = (transitionName) => {
+        const newList = listTransactions.filter(elem => elem.description !== transitionName)
+        setListTransactions(newList)
+    }
+
+
     return (
         <div>
-            <HeaderDash />
+            <HeaderDash Logout={Logout} />
             <div className="container-dash">
                 <div className="div-forms-total">
                     <div className="container-form-infosDash">
-                        <InputsForm />
+                        <InputsForm setListTransactions={setListTransactions}/>
                     </div>
                     <div>
-                        <ValueTotal />
+                        <ValueTotal listFiltered={listFiltered} />
                     </div>
                 </div>
                 <div>
-                    <ProfileValues/>
+                    <ProfileValues setFiltered={setFiltered} listFiltered={listFiltered} removeTransition={removeTransition}/>
                 </div>
 
             </div>
